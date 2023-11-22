@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter # 15-20 | Arrays: It's Methods &amp; for loops</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- custom  css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="javascript:void(0)">Assignment</a>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Chapter 15 - 20</a
+                >
+              </li>
+            </ul>
+            <div class="d-flex"> 
+              <span class="text-white" id="userName"></span>
+             </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+<main>
+      <div class="container ">
+        <div class="py-5">
+          <div class="row">
+            <div class="col">
+              <h3 class="text-center">
+                Chapter # 15-20 | Arrays: It's Methods &amp; for loops
+              </h3>
+              <div class="border-bottom mt-4 border-secondary"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3 mt-md-5">
+          <div class="col-12 col-md-6 mb-3 mb-md-0">
+             <h4 class="text-center">Input</h4>   <!-- // input ki value ak value attribute m save hoti ha  -->
+            <div                             
+              class="border rounded-3 p-4 d-flex align-items-center"
+              style="height: 122px"
+            >             
+              <div class="input-group">
+                <input
+                  type="text" id="inputText"
+                  class="form-control bg-transparent"
+                  placeholder="Type your Text Here"
+                />
+                <button class="btn btn-outline-secondary" onclick="clearInput()">Clear</button>
+              </div>
+            </div>
+          </div>
+          <!-- BUTTONS -->
+          <div class="col-12 col-md-6 mb-3 mb-md-0">
+            <h4 class="text-center">Buttons</h4>
+            <div class="border rounded-3 p-3 text-center buttons" >
+              <button class="btn btn-danger" onclick="simpleAlert()">Simple Alert</button>
+              <button class="btn btn-danger" onclick="printMyName()">Print My Name</button>
+              <button class="btn btn-danger" onclick="printAllCities()">Print All Cities</button>
+              <button class="btn btn-danger" onclick="addYourCityInList()">Add Your City in List</button>
+              <button class="btn btn-danger" onclick="generateTable()">Generate Table</button>
+            </div>
+          </div>
+          <!-- <div class="col-12 col-md-6">
+            <h4 class="text-center">Original String</h4>
+            <div class="border rounded-3 p-4 originalStringBox" style="height: 122px">
+              <div id="originalTextBox" class="text-center">
+                (1)Faisalabad
+                (2)Lahore
+                (3)Islamabad
+                (4)Karachi
+                (5)shahkot
+                (6)quetta
+              </div>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-outline-dark mt-4" id="clearstatementButton">
+                Clear Statement
+              </button>
+           </div>
+          </div> -->
+        </div>
+         <div class="row mt-3 mt-md-5"> 
+          <!-- <div class="col-12 col-md-6 mb-3 mb-md-0">
+            <h4 class="text-center">Buttons</h4>
+            <div class="border rounded-3 p-4 text-center buttons" >
+              <button class="btn btn-danger" onclick="simpleAlert()">Simple Alert</button>
+              <button class="btn btn-danger" onclick="printMyName()">Print My Name</button>
+              <button class="btn btn-danger" onclick="printAllCities()">Print All Cities</button>
+              <button class="btn btn-danger" onclick="addYourCityInList()">Add Your City in List</button>
+              <button class="btn btn-danger" onclick="generateTable()">Generate Table</button>
+            </div>
+          </div>  -->
+          <div class="col-12 col-md-6">
+            <h4 class="text-center">Original String</h4>
+            <div class="border rounded-3 p-4 originalStringBox" style="min-height: 180px;">
+              <div id="originalTextBox" class="text-center">
+                Please type your text in input field than Enter Button and<div>see your output in Output Box,Code in original String Box.</div>
+              </div>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-outline-dark mt-4" id="clearstatementButton">
+                Clear Statement
+              </button>
+           </div>
+          </div>
+
+
+
+                <!-- OUTPUTS -->  
+        <div class="col-12 col-md-6 mb-4">
+          <h4 class="text-center">Output / Result</h4>
+          <div class="border rounded-3 p-4 text-center" style="min-height: 180px;">
+            <div id="output"></div>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-outline-dark mt-4" id="clearOutputButton">
+             Clear Output
+            </button>
+          </div>
+       </div>
+      </div>
+    </div> 
+  </div>
+</main>
+    <!--      ----     FOOTER    ------        -->
+
+    <footer class="footer bg-dark pt-2">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p class="text-center text-white">
+              &copy; <span id="year"></span>. Assignment By Zoha Asghar
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- bootstrap  -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var now = new Date()
+      var year = now.getFullYear()
+      document.getElementById("year").innerText = year
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
